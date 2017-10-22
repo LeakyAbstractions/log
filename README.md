@@ -1,6 +1,11 @@
 
 # log
 
+[![Last release](https://img.shields.io/github/release/LeakyAbstractions/log.svg)](https://github.com/LeakyAbstractions/log/releases)
+[![Build status](https://travis-ci.org/LeakyAbstractions/log.svg?branch=master)](https://travis-ci.org/LeakyAbstractions/log)
+[![Code coverage](https://codecov.io/github/LeakyAbstractions/log/coverage.svg?branch=master)](https://codecov.io/github/LeakyAbstractions/log?branch=master)
+[![Static analysis](https://scan.coverity.com/projects/14165/badge.svg)](https://scan.coverity.com/projects/leakyabstractions-log)
+
 > Write program logs
 
 ![](https://github.com/LeakyAbstractions/log/raw/master/doc/logo.png)
