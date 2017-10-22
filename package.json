@@ -1,0 +1,21 @@
+{
+  "name":           "log",
+  "version":        "1.0.0",
+  "description":    "A tiny C logging library",
+  "repo":           "LeakyAbstractions/log",
+  "license":        "LGPL",
+  "install":        "sh DEPENDENCIES && sh INSTALL",
+  "src": [
+    "src/log.c",
+    "src/log.h"
+  ],
+  "keywords": [
+    "logging",
+    "library",
+    "c",
+    "log"
+  ],
+  "dependencies": {
+    "LeakyAbstractions/fmt": "*"
+  }
+}
