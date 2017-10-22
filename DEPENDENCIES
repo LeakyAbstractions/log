@@ -1,0 +1,6 @@
+# Install package manager
+if [ -z $(which clib) ] ; then git clone https://github.com/clibs/clib.git deps/clib && sudo make -C deps/clib install; fi
+# Download packages
+DEBUG=clib,clib-install,clib-package && clib install
+# Install packages
+if [ -z $(ldconfig -p | grep libfmt) ] ; then sudo clib install LeakyAbstractions/fmt; fi
