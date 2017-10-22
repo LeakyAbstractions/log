@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=${prefix}/include
+
+Name: log
+Description: A tiny C logging library
+Version: @VERSION@
+Libs: -L${libdir} -lliblog
+Cflags: -I${includedir}
