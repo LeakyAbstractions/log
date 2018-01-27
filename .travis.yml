@@ -1,0 +1,43 @@
+language: c
+
+env:
+  global:
+    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created via the "travis encrypt" command using the project repo's public key
+    - secure: "DQ4QpMezoax89QyOP+2LiANHVPRQPEBahoeHEPI2TyxYCTgQXYW7m8b4t1+koxl+mZ2IXkbUb9axlXHGhjOyT/kYQ/DeI3/1jcxad6lhGh1rrdpl1QEp3c+Um6xb7Lh4E/e3hE3P6KgIhFxY6PHh3wXjh7ppyutk77wW/mqSEaJjCyH6jujmNLYViz8FTjD7UBc21EIOVt3cWCIFJrWTPbqNTyGO8T4a4SFphIRp20jco2WxsCFdO9iw6PKn5/tPbprplxkeYxYHLjjksiyc4+x/5eZr2ZQH2dpeMv5msJCJJN9oo8VZjNb9Ak2SSJaHkyLlofVNKUABSuED2rjf07DKqvnABTHpLM6zuPioIcJ1ijG8FQYLWjUre9HQ882LVD4JYbsJq4GXjmhRt9keF+0ajkqLelG6baciOJDL1w7gZuerGGmHeMtakgzcstxQLfpF1BbKETAiUGowxobXkNlrO7rrLocG5lgJcP1P7O2UqRFt7+1LCOdjLK2dlMnwEsbEBx620Nn4sss5a/wYBKLc0Afiq2XXl4tsGeKwWLX7Qbg/fvR9DwebFOdlLT2qr67eHb9S668nY2ZFsQ+jji4uwXnQGy5g75ONVTomopyNXBLY6fthzJqiBvjaUhyLpkenumR0xqkg6F047A5Wnr76KuBqu7/LaG7+fi2ZhaQ="
+
+before_install:
+  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+script:
+  - echo travis_fold:start:DEPENDENCIES
+  - sh DEPENDENCIES
+  - echo travis_fold:end:DEPENDENCIES
+
+  - echo travis_fold:start:AUTORECONF
+  - autoreconf --install
+  - echo travis_fold:end:AUTORECONF
+
+  - echo travis_fold:start:CONFIGURE
+  - ./configure
+  - echo travis_fold:end:CONFIGURE
+
+  - echo travis_fold:start:MAKE
+  - make
+  - echo travis_fold:end:MAKE
+
+  - echo travis_fold:start:COVERAGE
+  - make coverage
+  - echo travis_fold:end:COVERAGE
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+addons:
+  coverity_scan:
+    project:
+      name: "LeakyAbstractions/log"
+      description: "A tiny C logging library"
+    notification_email: coverity@guillermo.in
+    build_command_prepend: "sh DEPENDENCIES"
+    build_command: "sh INSTALL"
+    branch_pattern: coverity_scan
