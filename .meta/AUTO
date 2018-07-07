@@ -1,0 +1,5 @@
+# Automatic Pragmatic Versioning
+AUTO_VERSION_FILE="package.json"
+AUTO_VERSION_GREP="version"
+AUTO_TRACKED_FILE=".meta/TRACKED"
+AUTO_GIT_COMMIT=""

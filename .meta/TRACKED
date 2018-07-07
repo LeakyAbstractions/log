@@ -1,0 +1,4 @@
+# Automatically tracked files
+/configure.ac
+/src/log.c
+/src/log.h
