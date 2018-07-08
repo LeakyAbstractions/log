@@ -1,7 +1,7 @@
 #
 # log
 #
-# Copyright (c) 2017 Guillermo Calvo
+# Copyright (c) 2018 Guillermo Calvo
 # Licensed under the GNU Lesser General Public License
 #
 
