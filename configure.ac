@@ -7,11 +7,11 @@ AC_PREREQ([2.68])
 
 
 # Initialize package
-AC_INIT([log], [1.0.0], [log@guillermo.in], [log], [https://github.com/LeakyAbstractions/log/])
+AC_INIT([log], [1.0.0.0], [log@guillermo.in], [log], [https://github.com/LeakyAbstractions/log/])
 
 
 # Information on the package
-AC_COPYRIGHT([Copyright 2017 Guillermo Calvo])
+AC_COPYRIGHT([Copyright 2018 Guillermo Calvo])
 AC_REVISION([$PACKAGE_VERSION])
 AC_MSG_NOTICE([
  _             
