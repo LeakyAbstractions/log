@@ -10,6 +10,8 @@
 
 Generate customized logs to files and other destinations.
 
+> This software adheres to [Pragmatic Versioning](https://pragver.github.io/).
+
 
 ## API
 
@@ -38,7 +40,7 @@ Generate customized logs to files and other destinations.
 
 ## Author
 
-Copyright 2017 [Guillermo Calvo](https://github.com/guillermocalvo)
+Copyright 2018 [Guillermo Calvo](https://github.com/guillermocalvo)
 
 [![](https://resume.guillermo.in/assets/images/thumb.png)](https://guillermo.in/)
 
